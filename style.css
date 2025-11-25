@@ -179,3 +179,113 @@ footer {
     margin-top: 50px;
     font-size: 14px;
 }
+
+
+/* ==================================== */
+/* ★★ レスポンシブデザイン (モバイル対応) ★★ */
+/* ==================================== */
+@media (max-width: 768px) {
+    
+    /* 1. ヘッダー: PCナビゲーションを非表示にし、ロゴとメニューを縦に並べる */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    nav {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    /* ナビゲーションを縦積み */
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    nav ul li a::after {
+        content: none; /* 下線を非表示 */
+    }
+
+
+    /* 2. ヒーローセクション: パディングとフォントサイズを調整 */
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+    
+    /* ヒーローボタン: ブロック要素にして縦に並べる */
+    .hero .btn-primary {
+        display: block;
+        width: 80%; /* 幅を広げる */
+        margin: 15px auto !important; /* 中央揃えと余白 */
+    }
+
+    /* 3. 特長グリッド: 縦積みレイアウトに変更 */
+    .feature-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-item {
+        padding: 20px;
+    }
+    
+    /* 4. about.html の理念と会社概要の調整 */
+    .vision-mission-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* 会社概要テーブル: 項目を縦に並べる (項目名と内容を縦積み) */
+    .company-data th, .company-data td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px 15px;
+    }
+    
+    .company-data th {
+        background-color: var(--color-primary);
+        color: white;
+        border-radius: 0;
+    }
+    
+    .company-data td {
+        background-color: white !important;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    /* aboutページのタイポグラフィ調整 */
+    .founder-quote {
+        font-size: 18px;
+    }
+    
+    /* 5. お問い合わせフォームの調整 */
+    .container {
+        padding: 0 10px;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
