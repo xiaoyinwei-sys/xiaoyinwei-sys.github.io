@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平凡社 | お問い合わせ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">平凡社 | HEIBONSHA</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">平凡社について</a></li>
+                <li><a href="service.html">サービス</a></li>
+                <li><a href="case_study.html">実績</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section>
+            <div class="section-title">
+                <h2>お問い合わせ</h2>
+            </div>
+            
+            <div style="background-color: white; padding: 30px; border-radius: 8px;">
+                <p>中日間のビジネスに関するご相談や、具体的なサービスのお問い合わせは、以下のフォームよりお気軽にご連絡ください。</p>
+                
+                <form action="#" method="POST" style="margin-top: 20px;">
+                    <p><label for="company">貴社名：</label><br><input type="text" id="company" name="company" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></p>
+                    <p><label for="name">お名前：</label><br><input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></p>
+                    <p><label for="email">メールアドレス：</label><br><input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></p>
+                    <p><label for="content">お問い合わせ内容：</label><br><textarea id="content" name="content" rows="6" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></textarea></p>
+                    <p style="text-align: center;">
+                        <button type="submit" class="btn-primary" style="border: none; cursor: pointer;">送信する</button>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 平凡社 | HEIBONSHA. All Rights Reserved.
+    </footer>
+</body>
+</html>
