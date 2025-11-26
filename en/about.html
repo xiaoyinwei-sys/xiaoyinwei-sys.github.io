@@ -96,11 +96,19 @@
         .company-data tr:nth-child(even) td {
             background-color: #f4f4f4; 
         }
-        /* テーブルの角丸を維持 */
         .company-data tr:first-child th { border-top-left-radius: 5px; }
         .company-data tr:first-child td { border-top-right-radius: 5px; }
         .company-data tr:last-child th { border-bottom-left-radius: 5px; }
         .company-data tr:last-child td { border-bottom-right-radius: 5px; }
+        .founder-message img {
+             width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
+             margin: 0 auto 20px; display: block; transform: rotate(0deg);
+        }
+        @media (max-width: 768px) {
+            .vision-mission-grid {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -115,23 +123,21 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div style="margin-left: 20px;">
-            <span style="color: var(--color-primary); font-weight: bold;">EN</span>
-            <span style="color: var(--color-primary);"> | </span>
-            <a href="../index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">JP</a>
-            <span style="color: var(--color-primary);"> | </span>
-            <a href="../zh/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">ZH</a>
+        <div class="lang-switch">
+            <span class="active">EN</span>
+            <span> | </span>
+            <a href="../index.html">JP</a>
+            <span> | </span>
+            <a href="../zh/index.html">ZH</a>
         </div>
-        </header>
+    </header>
 
     <div class="message-hero">
         <div class="container">
             <h2>A Message from the Founder, Xiaoyin Wei</h2>
             
             <div class="founder-message">
-                <img src="../2014 澳洲.jpg" alt="Founder Xiaoyin Wei Photo" 
-                     style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
-                            margin: 0 auto 20px; display: block; transform: rotate(0deg);">
+                <img src="../2014 澳洲.jpg" alt="Founder Xiaoyin Wei Photo">
                 
                 <p class="founder-quote">
                     "The name 'Heibon' signifies not flashy success theories, but grounded, daily effort and solid support, standing right alongside our clients. We remain passionate about solving challenges as a valuable partner in business between Japan and the world."
