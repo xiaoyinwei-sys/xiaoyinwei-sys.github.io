@@ -96,19 +96,11 @@
         .company-data tr:nth-child(even) td {
             background-color: #f4f4f4; 
         }
+        /* テーブルの角丸を維持 */
         .company-data tr:first-child th { border-top-left-radius: 5px; }
         .company-data tr:first-child td { border-top-right-radius: 5px; }
         .company-data tr:last-child th { border-bottom-left-radius: 5px; }
         .company-data tr:last-child td { border-bottom-right-radius: 5px; }
-        .founder-message img {
-             width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
-             margin: 0 auto 20px; display: block; transform: rotate(0deg);
-        }
-        @media (max-width: 768px) {
-            .vision-mission-grid {
-                flex-direction: column;
-            }
-        }
     </style>
 </head>
 <body>
@@ -123,14 +115,14 @@
                 <li><a href="contact.html">联系我们</a></li>
             </ul>
         </nav>
-        <div class="lang-switch">
-            <a href="../en/index.html">EN</a>
-            <span> | </span>
-            <a href="../index.html">JP</a>
-            <span> | </span>
-            <span class="active">ZH</span>
+        <div style="margin-left: 20px;">
+            <a href="../en/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">EN</a>
+            <span style="color: var(--color-primary);"> | </span>
+            <a href="../index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">JP</a>
+            <span style="color: var(--color-primary);"> | </span>
+            <span style="color: var(--color-primary); font-weight: bold;">ZH</span>
         </div>
-    </header>
+        </header>
 
     <div class="message-hero">
         <div class="container">
@@ -138,7 +130,9 @@
             
             <div class="founder-message">
                 
-                <img src="../2014 澳洲.jpg" alt="平凡社 创始人 Xiaoyin Wei 照片">
+                <img src="../2014 澳洲.jpg" alt="平凡社 创始人 Xiaoyin Wei 照片" 
+                     style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
+                            margin: 0 auto 20px; display: block; transform: rotate(0deg);">
                 
                 <p class="founder-quote">
                     “‘平凡’之名所蕴含的，并非浮夸的成功论，而是日复一日脚踏实地的努力，以及站在客户身边、提供坚实可靠的支援。我们将以满腔热情，持续挑战解决难题，成为为日本和全球商业带来真正价值的伙伴。”
