@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Heibonsha</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Heibonsha | Groundwork Consulting</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="case_study.html">Case Studies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div style="margin-left: 20px;">
+            <span style="color: var(--color-primary); font-weight: bold;">EN</span>
+            <span style="color: var(--color-primary);"> | </span>
+            <a href="../index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">JP</a>
+            <span style="color: var(--color-primary);"> | </span>
+            <a href="../zh/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">ZH</a>
+        </div>
+        </header>
+
+    <div class="container">
+        <section>
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div style="background-color: white; padding: 30px; border-radius: 8px;">
+                <p>For inquiries regarding international business consultation or specific services, please feel free to contact us using the form below.</p>
+                
+                <form action="mailto:xiaoyinwei@gmail.com?subject=Inquiry from Heibonsha Website (English)" method="POST" enctype="text/plain" style="margin-top: 20px;">
+                    <p><label for="company">Company Name:</label><br><input type="text" id="company" name="Company Name" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></p>
+                    <p><label for="name">Your Name:</label><br><input type="text" id="name" name="Name" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></p>
+                    <p><label for="email">Email Address:</label><br><input type="email" id="email" name="Reply Email Address" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></p>
+                    <p><label for="content">Inquiry Details:</label><br><textarea id="content" name="Inquiry Content" rows="6" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></textarea></p>
+                    <p style="text-align: center;">
+                        <button type="submit" class="btn-primary" style="border: none; cursor: pointer;">Send</button>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 Heibonsha | Groundwork Consulting. All Rights Reserved.
+    </footer>
+</body>
+</html>

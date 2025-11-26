@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Heibonsha</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* about.html専用のスタイル調整 */
+        .message-hero {
+            background-color: white; 
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ddd;
+        }
+        .message-hero h2 {
+            font-size: 36px;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .founder-message {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .founder-quote {
+            font-size: 22px;
+            line-height: 1.8;
+            font-style: italic;
+            color: var(--color-text);
+            padding: 30px;
+            position: relative;
+            background-color: #f0f4f7;
+            border-radius: 5px;
+        }
+        .founder-quote::before, .founder-quote::after {
+            content: '“';
+            font-family: serif;
+            font-size: 100px;
+            color: #ccc;
+            position: absolute;
+            opacity: 0.3;
+        }
+        .founder-quote::before {
+            top: -20px;
+            left: 20px;
+        }
+        .founder-quote::after {
+            content: '”';
+            bottom: -50px;
+            right: 20px;
+        }
+        .founder-info {
+            margin-top: 20px;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+        .vision-mission-grid {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .vision-mission-item {
+            flex: 1;
+            padding: 25px;
+            border: 1px solid #eee;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.3s;
+        }
+        .vision-mission-item:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        }
+        .vision-mission-item h3 {
+            color: var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        .company-data table {
+            margin-top: 30px;
+            border: none;
+        }
+        .company-data th, .company-data td {
+            border: none;
+            padding: 15px 20px;
+            text-align: left;
+        }
+        .company-data th {
+            background-color: var(--color-primary); 
+            color: white;
+            font-weight: bold;
+            width: 30%;
+        }
+        .company-data tr:nth-child(even) td {
+            background-color: #f4f4f4; 
+        }
+        /* テーブルの角丸を維持 */
+        .company-data tr:first-child th { border-top-left-radius: 5px; }
+        .company-data tr:first-child td { border-top-right-radius: 5px; }
+        .company-data tr:last-child th { border-bottom-left-radius: 5px; }
+        .company-data tr:last-child td { border-bottom-right-radius: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Heibonsha | Groundwork Consulting</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="case_study.html">Case Studies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div style="margin-left: 20px;">
+            <span style="color: var(--color-primary); font-weight: bold;">EN</span>
+            <span style="color: var(--color-primary);"> | </span>
+            <a href="../index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">JP</a>
+            <span style="color: var(--color-primary);"> | </span>
+            <a href="../zh/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">ZH</a>
+        </div>
+        </header>
+
+    <div class="message-hero">
+        <div class="container">
+            <h2>A Message from the Founder, Xiaoyin Wei</h2>
+            
+            <div class="founder-message">
+                <img src="../2014 澳洲.jpg" alt="Founder Xiaoyin Wei Photo" 
+                     style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
+                            margin: 0 auto 20px; display: block; transform: rotate(0deg);">
+                
+                <p class="founder-quote">
+                    "The name 'Heibon' signifies not flashy success theories, but grounded, daily effort and solid support, standing right alongside our clients. We remain passionate about solving challenges as a valuable partner in business between Japan and the world."
+                </p>
+                <p class="founder-info">― Xiaoyin Wei (韋 暁寅)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section>
+            <div class="section-title">
+                <h2>Our Philosophy</h2>
+            </div>
+
+            <div class="vision-mission-grid">
+                <div class="vision-mission-item">
+                    <h3>Vision</h3>
+                    <p>To be the most trusted bridge, deepening mutual understanding in business and culture, and contributing to sustained growth and prosperity internationally, centered around Japan.</p>
+                </div>
+                <div class="vision-mission-item">
+                    <h3>Mission</h3>
+                    <p>To lead our clients' cross-border ventures to success through practical consulting, rooted in a deep understanding of respective markets and business customs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="company-data">
+            <div class="section-title">
+                <h2>Company Profile</h2>
+            </div>
+            
+            <table style="width: 100%; border-collapse: separate; border-spacing: 0;">
+                <tr><th>Company Name</th><td>HEIBONSHA Co., Ltd. (Doing business as Groundwork Consulting)</td></tr>
+                <tr><th>Representative</th><td>CEO Xiaoyin Wei (韋 暁寅)</td></tr>
+                <tr><th>Established</th><td>January 29, 2025</td></tr>
+                <tr><th>Capital</th><td>10 Million JPY</td></tr>
+                <tr><th>Location</th><td>5-9-2 Nakamachi 305, Setagaya-ku, Tokyo, Japan</td></tr>
+                <tr><th>Business</th><td>International business consulting focused on Japan, market entry support, and M&A support.</td></tr>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 Heibonsha | Groundwork Consulting. All Rights Reserved.
+    </footer>
+</body>
+</html>
