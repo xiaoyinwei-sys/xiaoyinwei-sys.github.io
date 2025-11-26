@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 | 平凡社</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">平凡社 | 基石咨询</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">公司简介</a></li>
+                <li><a href="service.html">服务项目</a></li>
+                <li><a href="case_study.html">成功案例</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </nav>
+        <div style="margin-left: 20px;">
+            <a href="../en/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">EN</a>
+            <span style="color: var(--color-primary);"> | </span>
+            <a href="../index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">JP</a>
+            <span style="color: var(--color-primary);"> | </span>
+            <span style="color: var(--color-primary); font-weight: bold;">ZH</span>
+        </div>
+        </header>
+
+    <div class="container">
+        <section>
+            <div class="section-title">
+                <h2>联系我们</h2>
+            </div>
+            
+            <div style="background-color: white; padding: 30px; border-radius: 8px;">
+                <p>如果您有任何关于国际商务咨询或具体服务的疑问，请随时通过以下表格联系我们。</p>
+                
+                <form action="mailto:xiaoyinwei@gmail.com?subject=来自平凡社网站的咨询 (中文)" method="POST" enctype="text/plain" style="margin-top: 20px;">
+                    <p><label for="company">贵公司名称：</label><br><input type="text" id="company" name="公司名称" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></p>
+                    <p><label for="name">您的姓名：</label><br><input type="text" id="name" name="姓名" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></p>
+                    <p><label for="email">电子邮件地址：</label><br><input type="email" id="email" name="回复邮箱地址" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></p>
+                    <p><label for="content">咨询内容：</label><br><textarea id="content" name="咨询内容" rows="6" required style="width: 100%; padding: 10px; border: 1px solid #ccc;"></textarea></p>
+                    <p style="text-align: center;">
+                        <button type="submit" class="btn-primary" style="border: none; cursor: pointer;">发送</button>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 平凡社 | 基石咨询. All Rights Reserved.
+    </footer>
+</body>
+</html>

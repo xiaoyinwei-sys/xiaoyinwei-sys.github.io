@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务项目 | 平凡社</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* service.html専用のスタイル調整 */
+        .service-list h3 {
+            color: var(--color-primary); 
+            border-left: 5px solid var(--color-accent); 
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        .service-list ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .service-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+        }
+        .service-list li::before {
+            content: '✓'; 
+            color: var(--color-accent);
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">平凡社 | 基石咨询</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">公司简介</a></li>
+                <li><a href="service.html">服务项目</a></li>
+                <li><a href="case_study.html">成功案例</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </nav>
+        <div style="margin-left: 20px;">
+            <a href="../en/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">EN</a>
+            <span style="color: var(--color-primary);"> | </span>
+            <a href="../index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">JP</a>
+            <span style="color: var(--color-primary);"> | </span>
+            <span style="color: var(--color-primary); font-weight: bold;">ZH</span>
+        </div>
+        </header>
+
+    <div class="container service-list">
+        <section>
+            <div class="section-title">
+                <h2>服务项目与解决方案</h2>
+            </div>
+            
+            <h3>1. 国际市场进入与战略规划</h3>
+            <p>我们为日本企业进入亚洲/欧洲/美洲，以及国际企业（包括大中华区）进入日本提供全方位支持，涵盖从战略规划到当地实体设立和业务运营。</p>
+            <ul>
+                <li>市场调研与可行性研究 (FS)</li>
+                <li>法律法规与许可支持</li>
+                <li>当地合作伙伴搜寻与谈判</li>
+            </ul>
+
+            <h3>2. 跨境并购 (M&A) 与商业合作支持</h3>
+            <p>我们确保跨越不同文化和法律系统的复杂国际并购交易取得成功。我们深谙各国商业惯例的专家团队将为您提供指导。</p>
+            <p>服务内容包括尽职调查、交易结构设计、谈判及并购后整合 (PMI)。</p>
+            
+            <h3>3. 全球化组织与人才发展</h3>
+            <p>我们提供培训计划，解决跨文化管理中的隔阂，并支持招聘真正能够在全球范围内取得成功的人才。</p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 平凡社 | 基石咨询. All Rights Reserved.
+    </footer>
+</body>
+</html>
