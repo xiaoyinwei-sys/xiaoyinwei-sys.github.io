@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>平凡社 | サービス・ソリューション</title>
+    <title>サービス | 平凡社</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* service.html専用のスタイル調整 */
+        .service-list h3 {
+            color: var(--color-primary); 
+            border-left: 5px solid var(--color-accent); 
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        .service-list ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .service-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+        }
+        .service-list li::before {
+            content: '✓'; 
+            color: var(--color-accent);
+            position: absolute;
+            left: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,34 +36,40 @@
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
-                <li><a href="about.html">平凡社について</a></li>
+                <li><a href="about.html">会社概要</a></li>
                 <li><a href="service.html">サービス</a></li>
                 <li><a href="case_study.html">実績</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
+                <li><a href="contact.html">連絡先</a></li>
             </ul>
         </nav>
-    </header>
+        <div style="margin-left: 20px;">
+            <a href="en/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">EN</a>
+            <span style="color: var(--color-primary);"> | </span>
+            <span style="color: var(--color-primary); font-weight: bold;">JP</span>
+            <span style="color: var(--color-primary);"> | </span>
+            <a href="zh/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">ZH</a>
+        </div>
+        </header>
 
-    <div class="container">
+    <div class="container service-list">
         <section>
             <div class="section-title">
-                <h2>サービス・ソリューション</h2>
+                <h2>サービスとソリューション</h2>
             </div>
             
-            <h3 style="color: var(--color-primary); border-left: 5px solid var(--color-accent); padding-left: 10px;">1. クロスボーダー市場進出支援</h3>
-            <p>日本企業の中華圏進出、中華圏企業の日本市場参入を戦略立案から現地法人設立、事業運営まで一貫してサポートします。</p>
+            <h3>1. 国際市場参入・戦略コンサルティング</h3>
+            <p>日本企業のアジア・欧米進出、および国際企業（中華圏含む）の日本進出に対し、戦略策定から現地法人設立、事業運営までトータルでサポートします。</p>
             <ul>
-                <li>市場調査・フィジビリティスタディ (FS)</li>
-                <li>法務・許認可取得サポート</li>
-                <li>現地パートナー探索と交渉</li>
+                <li>市場調査・フィージビリティスタディ（FS）</li>
+                <li>法規制・許認可取得サポート</li>
+                <li>現地パートナーの発掘・交渉</li>
             </ul>
 
-            <h3 style="color: var(--color-primary); border-left: 5px solid var(--color-accent); padding-left: 10px;">2. M&A・事業提携サポート</h3>
-            <p>両国の商習慣を熟知した専門家が、複雑なクロスボーダーM&Aの成功を確実なものとします。</p>
+            <h3>2. クロスボーダーM&A・事業提携支援</h3>
+            <p>異文化、異法制度間での複雑な国際M&Aを成功に導きます。多様な商習慣に精通した専門家が、デューデリジェンス、ディールストラクチャリング、交渉、PMI（統合プロセス）までサポートします。</p>
             
-            <h3 style="color: var(--color-primary); border-left: 5px solid var(--color-accent); padding-left: 10px;">3. 異文化マネジメント・人材育成</h3>
-            <p>異文化間でのマネジメントギャップを解消するための研修プログラムや、グローバル人材採用の支援を行います。</p>
-
+            <h3>3. グローバル組織・人材開発</h3>
+            <p>クロスカルチャーのマネジメントギャップを解消するための研修プログラムや、真にグローバルで活躍できる人材の採用を支援します。</p>
         </section>
     </div>
 
