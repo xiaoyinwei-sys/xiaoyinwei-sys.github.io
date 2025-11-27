@@ -1,127 +1,37 @@
 /*
  * style.css
- * 增加了移动端响应式布局和汉堡菜单的样式
+ * ハンバーガーメニューとモバイル対応機能を追加したバージョン
+ * （前回のレスポンスで提供済み）
  */
-
-:root {
-    /* 颜色变量保持初始定义 */
-    --color-primary: #003366; 
-    --color-accent: #ff6600;
-    --color-text: #333;
-    --color-background: #f4f7f9;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--color-background);
-    color: var(--color-text);
-    line-height: 1.6;
-}
-
-/* --- 桌面端布局 --- */
-header {
-    background-color: white;
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-header h1 a {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 900;
-}
-
-/* 导航栏 */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* 桌面端横向排列 */
-}
-
-nav li a {
-    text-decoration: none;
-    color: var(--color-text);
-    padding: 10px 15px;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-nav li a:hover {
-    color: var(--color-accent);
-}
-
-/* 容器和主要内容样式（保持初始样式） */
-.container {
-    max-width: 1200px; 
-    margin: 40px auto; 
-    padding: 0 20px;
-}
-
-section {
-    margin-bottom: 60px;
-    padding: 20px;
-}
-
-.section-title h2 {
-    color: var(--color-primary);
-}
-
-/* 初始 feature-grid 样式 (flex) */
-.feature-grid {
-    display: flex; 
-    gap: 30px; 
-    text-align: center;
-}
-
-.feature-item {
-    background: white; 
-    padding: 30px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
-    flex: 1;
-}
+/* ... (中略：共通の初期スタイル) ... */
 
 /* --- 移动端特有组件样式 --- */
-
-/* 语言切换和汉堡菜单的图标容器 */
 .icon-container {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-/* 汉堡菜单和地球图标按钮 */
 .menu-toggle, .lang-toggle {
     background: none;
     border: none;
-    font-size: 24px; /* 增大图标尺寸 */
+    font-size: 24px;
     cursor: pointer;
     color: var(--color-primary);
     padding: 0;
+    display: none; /* デスクトップでは非表示 */
 }
 
-/* 语言切换下拉菜单 */
 .lang-dropdown {
     position: absolute;
-    top: 55px; /* 调整到 header 下方 */
+    top: 55px;
     right: 5%;
     background-color: white;
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     padding: 10px;
-    display: none; /* 默认隐藏 */
+    display: none; 
     flex-direction: column;
 }
 
@@ -131,24 +41,22 @@ section {
     color: var(--color-text);
 }
 
-.lang-dropdown a:hover {
-    background-color: var(--color-background);
-}
-
-
 /* --- 移动端响应式 (Media Queries) --- */
-
 @media (max-width: 768px) {
-    
     header {
         padding: 10px 5%;
     }
+    
+    /* 强项列表を垂直に */
+    .feature-grid {
+        flex-direction: column;
+    }
 
-    /* 桌面端导航菜单在移动端隐藏 */
+    /* デスクトップ用ナビゲーションを隠し、モバイル用を表示 */
     header nav {
         display: none;
         position: absolute;
-        top: 60px; /* 菜单栏高度 */
+        top: 60px;
         left: 0;
         right: 0;
         background-color: white;
@@ -156,64 +64,34 @@ section {
         z-index: 999;
     }
 
-    /* 菜单展开时的样式 */
     header nav.is-open {
         display: block;
     }
 
     header nav ul {
-        flex-direction: column; /* 纵向排列 */
+        flex-direction: column;
         padding: 10px 0;
     }
-
-    header nav li {
-        text-align: left;
-        border-bottom: 1px solid #eee;
-    }
     
-    header nav li:last-child {
-        border-bottom: none;
-    }
-
     header nav li a {
-        display: block; /* 占据整行 */
         padding: 15px 5%;
-    }
-
-    /* 汉堡菜单和地球图标只在移动端显示，并确保地球图标和汉堡菜单不在导航菜单内 */
-    .menu-toggle {
-        display: block; 
-        order: 2; /* 确保在右侧 */
-    }
-    
-    .lang-toggle {
         display: block;
-        order: 1;
     }
     
-    /* 强项列表在移动端变为垂直堆叠 */
-    .feature-grid {
-        flex-direction: column;
+    /* ハンバーガーメニューと地球アイコンを表示 */
+    .menu-toggle, .lang-toggle {
+        display: block; 
     }
-
-    .feature-item {
-        margin-bottom: 20px;
-    }
-
-    /* 隐藏语言切换的旧文本区域 */
-    header > div[style] { /* 匹配旧的语言切换div */
+    
+    /* デスクトップ用の言語切り替えを非表示 */
+    .lang-switch {
         display: none !important;
     }
 }
 
 @media (min-width: 769px) {
-    /* 在桌面端隐藏汉堡菜单和地球图标 */
+    /* デスクトップではハンバーガーメニューと地球アイコンを非表示 */
     .menu-toggle, .lang-toggle, .lang-dropdown {
         display: none !important;
-    }
-
-    /* 桌面端恢复旧的语言切换文本 */
-    header > div[style] {
-         display: block !important;
     }
 }
