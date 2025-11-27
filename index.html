@@ -9,7 +9,23 @@
 <body>
     <header>
         <h1><a href="index.html">平凡社 | HEIBONSHA</a></h1>
-        <nav>
+        
+        <!-- 📱 移动端功能: 图标容器、语言切换按钮 (地球) 和菜单切换按钮 (汉堡) -->
+        <!-- CSS将控制它们在桌面端隐藏，在移动端显示 -->
+        <div class="icon-container">
+            <button class="lang-toggle" aria-expanded="false" aria-controls="lang-dropdown-menu">🌐</button>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+        </div>
+
+        <!-- 📱 移动端功能: 语言切换下拉菜单 -->
+        <div id="lang-dropdown-menu" class="lang-dropdown">
+            <a href="en/index.html">English</a>
+            <span class="active">日本語</span>
+            <a href="zh/index.html">简体中文</a>
+        </div>
+
+        <!-- 主导航菜单 (ID="main-nav" 用于JS和CSS控制) -->
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">ホーム</a></li>
                 <li><a href="about.html">会社概要</a></li>
@@ -18,19 +34,22 @@
                 <li><a href="contact.html">連絡先</a></li>
             </ul>
         </nav>
-        <div style="margin-left: 20px;">
-            <a href="en/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">EN</a>
-            <span style="color: var(--color-primary);"> | </span>
-            <span style="color: var(--color-primary); font-weight: bold;">JP</span>
-            <span style="color: var(--color-primary);"> | </span>
-            <a href="zh/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">ZH</a>
+        
+        <!-- 🖥️ 桌面端: 语言切换 (CSS将控制它在移动端隐藏) -->
+        <div class="lang-switch">
+            <a href="en/index.html">EN</a>
+            <span> | </span>
+            <span class="active">JP</span>
+            <span> | </span>
+            <a href="zh/index.html">ZH</a>
         </div>
-        </header>
+    </header>
 
     <div class="hero">
         <h2>日本と世界を繋ぐ、国際ビジネスの戦略パートナー。</h2>
         <p>創業者の情熱と、国際市場を深く理解した実践的なソリューションで、貴社の成功を強力に支援します。</p>
         
+        <!-- 按钮样式遵循 V2 CSS和原始的内联样式 -->
         <a href="service.html" class="btn-primary" style="margin-right: 20px;">サービスを見る</a>
         <a href="contact.html" class="btn-primary" style="background: white; color: var(--color-primary); box-shadow: 0 4px 6px rgba(0, 51, 102, 0.3);">お問い合わせ</a>
     </div>
@@ -57,6 +76,11 @@
                 </div>
             </div>
         </section>
+        
+        <!-- 国际化形象图片 -->
+        <div class="full-width-image" style="margin: 60px 0; overflow: hidden; border-radius: 8px;">
+            <img src="japan_business_image.jpg" alt="国際的な戦略的パートナーシップを示す握手" loading="lazy" style="display: block; width: 100%; height: auto;">
+        </div>
 
         <section style="background-color: white; padding: 50px; border-radius: 8px;">
             <div class="section-title">
@@ -73,5 +97,40 @@
     <footer>
         &copy; 2025 平凡社 | HEIBONSHA. All Rights Reserved.
     </footer>
+    
+    <!-- 🚨 移动端菜单和地球图标的交互逻辑 -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const langToggle = document.querySelector('.lang-toggle');
+        const langDropdown = document.getElementById('lang-dropdown-menu');
+
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('is-open');
+            // 切换汉堡图标为关闭图标 '✕'
+            menuToggle.textContent = isExpanded ? '☰' : '✕';
+            
+            // 如果主菜单打开，关闭语言下拉菜单
+            if (mainNav.classList.contains('is-open') && langDropdown.style.display === 'flex') {
+                langDropdown.style.display = 'none';
+                langToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        langToggle.addEventListener('click', () => {
+            const isExpanded = langToggle.getAttribute('aria-expanded') === 'true';
+            langToggle.setAttribute('aria-expanded', !isExpanded);
+            langDropdown.style.display = isExpanded ? 'none' : 'flex';
+            
+            // 如果语言菜单打开，关闭主菜单并恢复汉堡图标
+            if (langDropdown.style.display === 'flex' && mainNav.classList.contains('is-open')) {
+                mainNav.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.textContent = '☰';
+            }
+        });
+    </script>
 </body>
 </html>
