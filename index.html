@@ -4,14 +4,371 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>平凡社 | 日本と世界を繋ぐビジネスコンサルティング</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- V2 CSS样式全部嵌入到 <style> 标签中 -->
+    <style>
+        /* style.css - 平凡社 (Heibonsha) Style V2: 增强先进性和国际性 */
+        :root {
+            --color-primary: #003366; /* 深邃靛蓝/海军蓝 (代表信任与沉稳) */
+            --color-accent: #cc0000; /* 红色 (代表中国和热情) */
+            --color-secondary: #00aaff; /* 新增：明亮青色/天蓝色 (代表先进性、全球化) */
+            --color-text: #333;
+            --color-background: #f8f8f8;
+        }
+
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+        }
+
+        header {
+            background-color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        header h1 a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-primary); /* 悬停时颜色略深 */
+        }
+
+        /* 导航项下方的滑动下划线效果 */
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: var(--color-accent);
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        /* 桌面端语言切换样式 */
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .lang-switch a, .lang-switch span {
+            text-decoration: none; 
+            color: var(--color-primary); 
+            font-weight: bold;
+            padding: 0 5px;
+        }
+
+        .lang-switch .active {
+            color: var(--color-accent); /* 当前语言用红色强调 */
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 主视觉区域 - 渐变和阴影 */
+        .hero {
+            /* 使用主色和辅助色创建渐变背景 */
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px; 
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+        }
+
+        .hero h2 {
+            font-size: 48px; /* 字体加大 */
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 文本阴影 */
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* 主要按钮 - 渐变、圆角和悬停动画 */
+        .btn-primary {
+            background: linear-gradient(45deg, var(--color-accent), #ff3333);
+            color: white;
+            text-decoration: none;
+            padding: 14px 35px; 
+            border-radius: 50px; 
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(204, 0, 0, 0.3);
+            display: inline-block; 
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #ff3333, var(--color-accent));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(204, 0, 0, 0.4);
+        }
+
+        /* 联系咨询按钮的定制样式（覆盖渐变按钮） */
+        .hero a[href*="contact"] {
+            background: white !important;
+            color: var(--color-primary) !important;
+            box-shadow: 0 4px 6px rgba(0, 51, 102, 0.3) !important;
+            border: 1px solid var(--color-primary);
+        }
+        .hero a[href*="contact"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 51, 102, 0.4) !important;
+            opacity: 0.9;
+        }
+
+
+        /* 区域标题 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--color-primary);
+            display: inline-block;
+            border-bottom: 4px solid var(--color-accent);
+            padding-bottom: 8px;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        .feature-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px); /* 悬停时略微抬升，增加高级感 */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item h3 {
+            color: var(--color-primary);
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* 底部 */
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+
+        /* --- 6. 📱 移动端菜单组件 (默认在桌面端隐藏) --- */
+
+        .icon-container {
+            display: none; /* 桌面端默认隐藏 */
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-toggle, .lang-toggle {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color-primary);
+            padding: 0;
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 65px; /* 根据 header 高度调整 */
+            right: 10px; 
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px;
+            display: none; /* 初始状态隐藏 */
+            flex-direction: column;
+            border-radius: 5px;
+        }
+
+        .lang-dropdown a, .lang-dropdown .active {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: bold;
+        }
+
+        .lang-dropdown .active {
+            color: var(--color-accent);
+        }
+
+        /* ==================================== */
+        /* ★★ 响应式设计 (Media Queries) ★★ */
+        /* 768px 及以下设备 */
+        /* ==================================== */
+        @media (max-width: 768px) {
+            
+            /* 头部布局调整 */
+            header {
+                padding: 15px 10px;
+            }
+            
+            /* 隐藏桌面导航和语言切换，显示移动端图标 */
+            #main-nav, .lang-switch {
+                display: none;
+            }
+
+            .icon-container {
+                display: flex; /* 移动端显示图标容器 */
+            }
+
+            /* 移动端菜单展开时的样式 */
+            #main-nav {
+                position: absolute;
+                top: 60px; /* 调整到 header 下方 */
+                left: 0;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            #main-nav.is-open {
+                display: block; /* JS控制展开 */
+            }
+            
+            #main-nav ul {
+                flex-direction: column; /* 菜单项垂直排列 */
+                padding: 10px 0;
+            }
+            
+            #main-nav ul li {
+                margin-left: 0;
+            }
+            
+            #main-nav ul li a {
+                padding: 15px 5%;
+                display: block;
+                border-bottom: 1px solid var(--color-background);
+                font-size: 16px; 
+            }
+            
+            #main-nav ul li a::after {
+                content: none; /* 隐藏下划线效果 */
+            }
+
+            /* 主视觉区域调整 */
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+            
+            /* 按钮在移动端垂直排列 */
+            .hero .btn-primary {
+                display: block;
+                width: 80%; 
+                margin: 15px auto !important; 
+            }
+
+            /* 特色网格改为垂直堆叠 */
+            .feature-grid {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .feature-item {
+                padding: 20px;
+            }
+            
+            /* 其他排版调整 */
+            .container {
+                padding: 0 10px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1><a href="index.html">平凡社 | HEIBONSHA</a></h1>
         
         <!-- 📱 移动端功能: 图标容器、语言切换按钮 (地球) 和菜单切换按钮 (汉堡) -->
-        <!-- CSS将控制它们在桌面端隐藏，在移动端显示 -->
         <div class="icon-container">
             <button class="lang-toggle" aria-expanded="false" aria-controls="lang-dropdown-menu">🌐</button>
             <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
@@ -24,7 +381,7 @@
             <a href="zh/index.html">简体中文</a>
         </div>
 
-        <!-- 主导航菜单 (ID="main-nav" 用于JS和CSS控制) -->
+        <!-- 主导航菜单 -->
         <nav id="main-nav">
             <ul>
                 <li><a href="index.html">ホーム</a></li>
@@ -35,7 +392,7 @@
             </ul>
         </nav>
         
-        <!-- 🖥️ 桌面端: 语言切换 (CSS将控制它在移动端隐藏) -->
+        <!-- 🖥️ 桌面端: 语言切换 -->
         <div class="lang-switch">
             <a href="en/index.html">EN</a>
             <span> | </span>
@@ -49,7 +406,6 @@
         <h2>日本と世界を繋ぐ、国際ビジネスの戦略パートナー。</h2>
         <p>創業者の情熱と、国際市場を深く理解した実践的なソリューションで、貴社の成功を強力に支援します。</p>
         
-        <!-- 按钮样式遵循 V2 CSS和原始的内联样式 -->
         <a href="service.html" class="btn-primary" style="margin-right: 20px;">サービスを見る</a>
         <a href="contact.html" class="btn-primary" style="background: white; color: var(--color-primary); box-shadow: 0 4px 6px rgba(0, 51, 102, 0.3);">お問い合わせ</a>
     </div>
@@ -79,7 +435,7 @@
         
         <!-- 国际化形象图片 -->
         <div class="full-width-image" style="margin: 60px 0; overflow: hidden; border-radius: 8px;">
-            <img src="japan_business_image.jpg" alt="国際的な戦略的パートナーシップを示す握手" loading="lazy" style="display: block; width: 100%; height: auto;">
+            <img src="https://placehold.co/1200x400/003366/ffffff?text=Global+Strategy+%26+Partnership" alt="国際的な戦略的パートナーシップを示す握手" loading="lazy" style="display: block; width: 100%; height: auto;">
         </div>
 
         <section style="background-color: white; padding: 50px; border-radius: 8px;">
