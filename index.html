@@ -44,8 +44,8 @@
         <h2>日本と世界を繋ぐ、国際ビジネスの戦略パートナー。</h2>
         <p>創業者の情熱と、国際市場を深く理解した実践的なソリューションで、貴社の成功を強力に支援します。</p>
         
-        <a href="service.html" class="btn-primary" style="margin-right: 20px;">サービスを見る</a>
-        <a href="contact.html" class="btn-primary" style="background: white; color: var(--color-primary); box-shadow: 0 4px 6px rgba(0, 51, 102, 0.3);">お問い合わせ</a>
+        <a href="service.html" class="btn-primary">サービスを見る</a>
+        <a href="contact.html" class="btn-primary">お問い合わせ</a>
     </div>
 
     <div class="container">
@@ -103,7 +103,6 @@
             mainNav.classList.toggle('is-open');
             menuToggle.textContent = isExpanded ? '☰' : '✕';
             
-            // メインメニューが開いた場合、言語ドロップダウンを閉じる
             if (mainNav.classList.contains('is-open') && langDropdown.style.display === 'flex') {
                 langDropdown.style.display = 'none';
                 langToggle.setAttribute('aria-expanded', 'false');
@@ -115,7 +114,6 @@
             langToggle.setAttribute('aria-expanded', !isExpanded);
             langDropdown.style.display = isExpanded ? 'none' : 'flex';
             
-            // 言語メニューが開いた場合、メインメニューを閉じる
             if (langDropdown.style.display === 'flex' && mainNav.classList.contains('is-open')) {
                 mainNav.classList.remove('is-open');
                 menuToggle.setAttribute('aria-expanded', 'false');
