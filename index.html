@@ -9,7 +9,19 @@
 <body>
     <header>
         <h1><a href="index.html">平凡社 | HEIBONSHA</a></h1>
-        <nav>
+        
+        <div class="icon-container">
+            <button class="lang-toggle" aria-expanded="false" aria-controls="lang-dropdown-menu">🌐</button>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+        </div>
+
+        <div id="lang-dropdown-menu" class="lang-dropdown">
+            <a href="en/index.html">English</a>
+            <span style="font-weight: bold; color: var(--color-accent);">日本語</span>
+            <a href="zh/index.html">简体中文</a>
+        </div>
+
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">ホーム</a></li>
                 <li><a href="about.html">会社概要</a></li>
@@ -18,6 +30,7 @@
                 <li><a href="contact.html">連絡先</a></li>
             </ul>
         </nav>
+        
         <div class="lang-switch">
             <a href="en/index.html">EN</a>
             <span> | </span>
@@ -77,5 +90,38 @@
     <footer>
         &copy; 2025 平凡社 | HEIBONSHA. All Rights Reserved.
     </footer>
+    
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const langToggle = document.querySelector('.lang-toggle');
+        const langDropdown = document.getElementById('lang-dropdown-menu');
+
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('is-open');
+            menuToggle.textContent = isExpanded ? '☰' : '✕';
+            
+            // メインメニューが開いた場合、言語ドロップダウンを閉じる
+            if (mainNav.classList.contains('is-open') && langDropdown.style.display === 'flex') {
+                langDropdown.style.display = 'none';
+                langToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        langToggle.addEventListener('click', () => {
+            const isExpanded = langToggle.getAttribute('aria-expanded') === 'true';
+            langToggle.setAttribute('aria-expanded', !isExpanded);
+            langDropdown.style.display = isExpanded ? 'none' : 'flex';
+            
+            // 言語メニューが開いた場合、メインメニューを閉じる
+            if (langDropdown.style.display === 'flex' && mainNav.classList.contains('is-open')) {
+                mainNav.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.textContent = '☰';
+            }
+        });
+    </script>
 </body>
 </html>
