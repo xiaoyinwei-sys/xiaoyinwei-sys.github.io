@@ -9,18 +9,7 @@
 <body>
     <header>
         <h1><a href="index.html">平凡社 | HEIBONSHA</a></h1>
-        <div class="icon-container">
-            <button class="lang-toggle" aria-expanded="false" aria-controls="lang-dropdown-menu">🌐</button>
-            <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
-        </div>
-
-        <div id="lang-dropdown-menu" class="lang-dropdown">
-            <a href="en/index.html">English</a>
-            <span style="font-weight: bold; color: var(--color-accent);">日本語</span>
-            <a href="zh/index.html">简体中文</a>
-        </div>
-
-        <nav id="main-nav">
+        <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
                 <li><a href="about.html">会社概要</a></li>
@@ -29,48 +18,51 @@
                 <li><a href="contact.html">連絡先</a></li>
             </ul>
         </nav>
-
-        <div style="margin-left: 20px;">
-            <a href="en/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">EN</a>
-            <span style="color: var(--color-primary);"> | </span>
-            <span style="color: var(--color-primary); font-weight: bold;">JP</span>
-            <span style="color: var(--color-primary);"> | </span>
-            <a href="zh/index.html" style="text-decoration: none; color: var(--color-primary); font-weight: bold;">ZH</a>
+        <div class="lang-switch">
+            <a href="en/index.html">EN</a>
+            <span> | </span>
+            <span class="active">JP</span>
+            <span> | </span>
+            <a href="zh/index.html">ZH</a>
         </div>
     </header>
 
-    <div class="hero" style="background-color: white; padding: 80px; text-align: center;">
-        <h2 style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px;">日本と世界を繋ぐ、国際ビジネスの戦略パートナー。</h2>
-        <p style="font-size: 18px; color: #333; margin-bottom: 30px;">創業者の情熱と、国際市場を深く理解した実践的なソリューションで、貴社の成功を強力に支援します。</p>
+    <div class="hero">
+        <h2>日本と世界を繋ぐ、国際ビジネスの戦略パートナー。</h2>
+        <p>創業者の情熱と、国際市場を深く理解した実践的なソリューションで、貴社の成功を強力に支援します。</p>
         
-        <a href="service.html" style="display: inline-block; padding: 12px 25px; background-color: var(--color-accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 20px; box-shadow: 0 4px 6px rgba(255, 102, 0, 0.3);">サービスを見る</a>
-        <a href="contact.html" style="display: inline-block; padding: 12px 25px; background: white; color: var(--color-primary); text-decoration: none; border-radius: 5px; font-weight: bold; border: 1px solid var(--color-primary); box-shadow: 0 4px 6px rgba(0, 51, 102, 0.3);">お問い合わせ</a>
+        <a href="service.html" class="btn-primary" style="margin-right: 20px;">サービスを見る</a>
+        <a href="contact.html" class="btn-primary" style="background: white; color: var(--color-primary); box-shadow: 0 4px 6px rgba(0, 51, 102, 0.3);">お問い合わせ</a>
     </div>
 
-    <div class="container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+    <div class="container">
         <section>
-            <div class="section-title" style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: 28px; color: var(--color-primary); margin-bottom: 5px;">平凡社の強み</h2>
-                <p style="color: var(--color-accent); font-size: 16px;">Heibonsha's Strength</p>
+            <div class="section-title">
+                <h2>平凡社の強み</h2>
+                <p>Heibonsha's Strength</p>
             </div>
             
-            <div class="feature-grid" style="display: flex; gap: 30px; text-align: center;">
-                <div class="feature-item" style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); flex: 1;">
-                    <h3 style="color: var(--color-accent); margin-top: 0; font-size: 20px;">深い文化理解</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>深い文化理解</h3>
                     <p>単なる言語翻訳ではなく、国際的な商習慣や各国の文化に基づいた適切なビジネスアプローチを提案します。</p>
                 </div>
-                <div class="feature-item" style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); flex: 1;">
-                    <h3 style="color: var(--color-accent); margin-top: 0; font-size: 20px;">広範なネットワーク</h3>
+                <div class="feature-item">
+                    <h3>広範なネットワーク</h3>
                     <p>創業者 韋 暁寅 (Xiaoyin Wei)が築いた、日本と世界各地にまたがる信頼できる強力な政府・企業ネットワークを活用します。</p>
                 </div>
-                <div class="feature-item" style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); flex: 1;">
-                    <h3 style="color: var(--color-accent); margin-top: 0; font-size: 20px;">実践的なソリューション</h3>
+                <div class="feature-item">
+                    <h3>実践的なソリューション</h3>
                     <p>理論だけでなく、現場で確実に成果を出すための具体的かつ実行可能な戦略を策定します。</p>
                 </div>
             </div>
         </section>
 
-        <section style="background-color: white; padding: 50px; border-radius: 8px; margin-bottom: 60px;">
+        <div class="full-width-image">
+            <img src="japan_business_image.jpg" alt="国際的な戦略的パートナーシップを示す握手" loading="lazy">
+        </div>
+
+        <section style="background-color: white; padding: 50px; border-radius: 8px;">
             <div class="section-title">
                 <h2>創業者メッセージ</h2>
             </div>
@@ -85,38 +77,5 @@
     <footer>
         &copy; 2025 平凡社 | HEIBONSHA. All Rights Reserved.
     </footer>
-    
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const mainNav = document.getElementById('main-nav');
-        const langToggle = document.querySelector('.lang-toggle');
-        const langDropdown = document.getElementById('lang-dropdown-menu');
-
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            mainNav.classList.toggle('is-open');
-            menuToggle.textContent = isExpanded ? '☰' : '✕';
-            
-            // メインメニューが開いた場合、言語ドロップダウンを閉じる
-            if (mainNav.classList.contains('is-open') && langDropdown.style.display === 'flex') {
-                langDropdown.style.display = 'none';
-                langToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        langToggle.addEventListener('click', () => {
-            const isExpanded = langToggle.getAttribute('aria-expanded') === 'true';
-            langToggle.setAttribute('aria-expanded', !isExpanded);
-            langDropdown.style.display = isExpanded ? 'none' : 'flex';
-            
-            // 言語メニューが開いた場合、メインメニューを閉じる
-            if (langDropdown.style.display === 'flex' && mainNav.classList.contains('is-open')) {
-                mainNav.classList.remove('is-open');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.textContent = '☰';
-            }
-        });
-    </script>
 </body>
 </html>
